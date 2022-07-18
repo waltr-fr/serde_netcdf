@@ -1,2 +1,6 @@
+# Build files
 /target
 /Cargo.lock
+
+# Editor files
+tags
