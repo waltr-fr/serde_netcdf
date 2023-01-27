@@ -55,7 +55,20 @@ impl Display for Error {
         match self {
             Error::Message(msg) => formatter.write_str(msg),
             Error::Eof => formatter.write_str("unexpected end of input"),
-            /* and so forth */
+            Error::Syntax => formatter.write_str("syntax error"),
+            Error::ExpectedBoolean => formatter.write_str("expected boolean"),
+            Error::ExpectedInteger => formatter.write_str("expected integer"),
+            Error::ExpectedString => formatter.write_str("expected string"),
+            Error::ExpectedNull => formatter.write_str("expected null"),
+            Error::ExpectedArray => formatter.write_str("expected array"),
+            Error::ExpectedArrayComma => formatter.write_str("expected array comma"),
+            Error::ExpectedArrayEnd => formatter.write_str("expected array end"),
+            Error::ExpectedMap => formatter.write_str("expected map"),
+            Error::ExpectedMapColon => formatter.write_str("expected map colon"),
+            Error::ExpectedMapComma => formatter.write_str("expected map comma"),
+            Error::ExpectedMapEnd => formatter.write_str("expected map end"),
+            Error::ExpectedEnum => formatter.write_str("expected enum"),
+            Error::TrailingCharacters => formatter.write_str("trailing characters"),
         }
     }
 }
